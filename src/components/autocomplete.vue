@@ -51,7 +51,6 @@
 		}
 
 		async onInput() {
-			debugger;
 			if (!this.searchFn) {
 				return;
 			}
