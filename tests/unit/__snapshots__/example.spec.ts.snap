@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`HelloWorld.vue renders props.msg when passed 1`] = `"new messageMy test envFor a guide and recipes on how to configure / customize this project,      check out thevue-cli documentation.Installed CLI Pluginsbabeltypescriptroutervuexeslintunit-jeste2e-cypressEssential LinksCore DocsForumCommunity ChatTwitterNewsEcosystemvue-routervuexvue-devtoolsvue-loaderawesome-vue"`;

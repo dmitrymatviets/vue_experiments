@@ -1,18 +1,24 @@
 <template lang="pug">
-	#app
-		#nav
-			router-link(to="/") Home
-			| &nbsp;
-			router-link(to="/about") About
-		router-view
+	Home()
 </template>
 
+<script lang="ts">
+	import { Component, Vue } from 'vue-property-decorator';
+	import Home from '@/pages/home.vue';
+
+	@Component({
+		components: {
+			Home,
+		},
+	})
+	export default class App extends Vue {
+	}
+</script>
+
+
 <style lang="stylus">
-#app
-	font-family 'Avenir', Helvetica, Arial, sans-serif
-	-webkit-font-smoothing antialiased
-	-moz-osx-font-smoothing grayscale
-	text-align center
-	color #2c3e50
-	margin-top 60px
+	html
+		height 100%
+	body
+		min-height 100%
 </style>
