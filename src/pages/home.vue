@@ -28,7 +28,7 @@
 		async apiSuggester(query: string): Promise<ISuggestion[]> {
 			const result = await axios({
 				method: 'GET',
-				url: `http://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`,
+				url: `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`,
 			});
 
 			return result.data.map((s: any) => ({
