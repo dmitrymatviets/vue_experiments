@@ -1,5 +1,4 @@
 <template lang="pug">
-
 	.autocomplete(style="width:350px")
 		span(class="autocomplete_clear" @click="clear" ) ✕
 		input(class="autocomplete_input" type="text" v-model="query" @input="onInput" @focus="onInput")
@@ -9,7 +8,7 @@
 </template>
 
 <script lang="ts">
-	import { Component, Prop, Vue } from 'vue-property-decorator';
+	import {Component, Prop, Vue} from 'vue-property-decorator';
 
 	export interface ISuggestion {
 		name: string;
@@ -37,9 +36,12 @@
 				return;
 			}
 			this.isSuggestHidden = true;
+			if (this.value) {
+				this.query = this.value.name;
+			}
 		}
 
-		onChoose(id : number) {
+		onChoose(id: number) {
 			const val = this.suggestions[id];
 			this.value = val;
 			this.query = val.name;
@@ -48,6 +50,7 @@
 
 		clear() {
 			this.query = '';
+			this.value = null;
 		}
 
 		async onInput() {
@@ -57,8 +60,7 @@
 			try {
 				this.suggestions = await this.searchFn(this.query);
 				this.isSuggestHidden = false;
-			}
- catch (e) {
+			} catch (e) {
 				// eslint-disable-next-line no-console
 				console.error(e);
 				this.suggestions = [] as ISuggestion[];
